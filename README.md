@@ -65,6 +65,7 @@ Logout/login to apply Docker group permissions.
 # 2️⃣ Clone / Create the Project
 
 ```bash
+git clone https://github.com/NubeEraTechnologies/react-ha-dr.git
 mkdir -p ~/ha-demo
 cd ~/ha-demo
 ```
