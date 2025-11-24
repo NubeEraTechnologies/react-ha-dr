@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>HA Demo</title></head>
+<body>
+<h1>HA Demo - React Frontend</h1>
+<p>API Result: <span id="api">Loading...</span></p>
+
+<script>
+fetch('/api')
+.then(r => r.json())
+.then(j => document.getElementById('api').innerText = j.message + ' @ ' + j.time)
+.catch(e => document.getElementById('api').innerText = e.message);
+</script>
+
+</body>
+</html>
