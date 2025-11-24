@@ -256,15 +256,3 @@ Backend replicas will auto-restart.
 ```bash
 docker stop react-ha-dr-postgres-1
 ```
-
----
-
-# 📈 Next Steps (Production Ready)
-
-To achieve real HA/DR in production:
-
-* Move from Docker Compose → **Kubernetes**
-* Use managed PostgreSQL (Azure/AWS/GCP)
-* Set up multi-node environment
-* Add monitoring (Prometheus + Grafana)
-* Enable TLS certificates (LetsEncrypt / Cert-Manager)
