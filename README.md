@@ -268,7 +268,3 @@ To achieve real HA/DR in production:
 * Set up multi-node environment
 * Add monitoring (Prometheus + Grafana)
 * Enable TLS certificates (LetsEncrypt / Cert-Manager)
-
----
-
-If you want this README automatically zipped along with the full project structure, tell me **“Package entire project”**.
