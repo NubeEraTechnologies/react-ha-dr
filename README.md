@@ -21,7 +21,7 @@ This project demonstrates:
 # 📂 Project Structure
 
 ```
-ha-demo/
+react-ha-dr/
 ├── backend/
 │   ├── Dockerfile
 │   ├── index.js
@@ -66,8 +66,8 @@ Logout/login to apply Docker group permissions.
 
 ```bash
 git clone https://github.com/NubeEraTechnologies/react-ha-dr.git
-mkdir -p ~/ha-demo
-cd ~/ha-demo
+mkdir -p ~/react-ha-dr
+cd ~/react-ha-dr
 ```
 
 Place all code files inside the appropriate folders.
@@ -254,7 +254,7 @@ Backend replicas will auto-restart.
 (Replace name with real container name)
 
 ```bash
-docker stop ha-demo-postgres-1
+docker stop react-ha-dr-postgres-1
 ```
 
 ---
