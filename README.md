@@ -306,25 +306,3 @@ Example:
 ```bash
 gunzip /opt/pg_backups/2025-11-25/db.dump.gz
 ```
----
-
-# 🧪 Failure Testing
-
-### Stop backend replicas
-
-```bash
-docker stop ha-demo-backend-2
-
-```
-
-Backend replicas will auto-restart.
-
----
-
-### Stop Postgres
-
-(Replace name with real container name)
-
-```bash
-docker stop react-ha-dr-postgres-1
-```
