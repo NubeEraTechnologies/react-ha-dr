@@ -310,10 +310,11 @@ gunzip /opt/pg_backups/2025-11-25/db.dump.gz
 
 # 🧪 Failure Testing
 
-### Kill backend replicas
+### Stop backend replicas
 
 ```bash
-docker kill $(docker ps -q -f name=backend)
+docker stop ha-demo-backend-2
+
 ```
 
 Backend replicas will auto-restart.
