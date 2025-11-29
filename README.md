@@ -208,6 +208,48 @@ docker stop <container_name>
 ```
 
 ---
+# **8. Set Up Backups (DR Step)**
+
+Create folder:
+
+```bash
+sudo mkdir -p /opt/pg_backups
+```
+
+Create backup script `/opt/pg_backups/backup.sh`:
+
+```bash
+#!/bin/bash
+set -e
+
+OUTDIR=/opt/pg_backups/$(date +%F)
+mkdir -p "$OUTDIR"
+
+docker exec $(docker ps -q -f name=postgres) \
+  pg_dump -U postgres -F c postgres > "$OUTDIR/db.dump"
+
+gzip "$OUTDIR/db.dump"
+
+find /opt/pg_backups -maxdepth 1 -type d -mtime +7 -exec rm -rf {} +
+```
+
+Make it executable:
+
+```bash
+sudo chmod +x /opt/pg_backups/backup.sh
+```
+
+Add cron:
+
+```bash
+sudo crontab -e
+```
+
+Add line:
+
+```
+0 2 * * * /opt/pg_backups/backup.sh >> /var/log/pg_backup.log 2>&1
+```
 
 # 📦 Backup & Disaster Recovery
 
