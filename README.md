@@ -276,7 +276,36 @@ Backups stored in:
 ```
 /opt/pg_backups/YYYY-MM-DD/db.dump.gz
 ```
+### ✔ First, manually trigger a backup:
 
+```bash
+sudo /opt/pg_backups/backup.sh
+```
+
+Then check backup folder:
+
+```bash
+ls -R /opt/pg_backups
+```
+
+You should see something like:
+
+```
+2025-11-25/
+   db.dump.gz
+```
+
+### ✔ Now you can decompress with:
+
+```bash
+gunzip /opt/pg_backups/<folder-name>/db.dump.gz
+```
+
+Example:
+
+```bash
+gunzip /opt/pg_backups/2025-11-25/db.dump.gz
+```
 ---
 
 # 🧪 Failure Testing
